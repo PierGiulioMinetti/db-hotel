@@ -71,6 +71,17 @@ FROM `stanze`;
 
 
 - Somma i prezzi dei pagamenti raggruppandoli per status
+SELECT SUM(`price`) AS'accepted'
+FROM `pagamenti`
+WHERE `status` = 'accepted';
+
+SELECT SUM(`price`) AS'pending'
+FROM `pagamenti`
+WHERE `status` = 'pending';
+
+SELECT SUM(`price`) AS'rejected'
+FROM `pagamenti`
+WHERE `status` = 'rejected';
 
 
 --------------------------------------------------------

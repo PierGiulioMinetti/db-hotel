@@ -21,6 +21,12 @@ SELECT
 FROM `ospiti` 
 WHERE `date_of_birth`  '2001';
 
+or
+
+SELECT *
+FROM `ospiti` 
+WHERE `date_of_birth` < NOW() - INTERVAL 20 YEAR;
+
 
 --------------------------------------------------------
 
@@ -54,11 +60,10 @@ LIMIT 1;
 
 
 - Seleziona gli ospiti riconosciuti con patente e nati nel 1975
-SELECT *
-FROM `ospiti`
+SELECT * 
+FROM `ospiti` 
 WHERE `document_type` = 'Driver License'
-AND `date_of_birth` = 1975;
-
+AND YEAR(`date_of_birth`) = 1975;
 
 --------------------------------------------------------
 

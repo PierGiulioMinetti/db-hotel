@@ -54,6 +54,10 @@ LIMIT 1;
 
 
 - Seleziona gli ospiti riconosciuti con patente e nati nel 1975
+SELECT *
+FROM `ospiti`
+WHERE `document_type` = 'Driver License'
+AND `date_of_birth` = 1975;
 
 
 --------------------------------------------------------

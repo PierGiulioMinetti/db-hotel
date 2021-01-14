@@ -73,6 +73,11 @@ WHERE `pagamenti`.`prenotazione_id` = 7;
 ---------------------------------------------------------------------------------------------------------
 
 - Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+SELECT *
+FROM `stanze`
+LEFT JOIN `prenotazioni`
+ON `stanze`.`id` = `prenotazioni`.`stanza_id`
+WHERE `prenotazioni`.`id` IS NULL ;
 
 
 

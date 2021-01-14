@@ -41,7 +41,7 @@ WHERE `name` LIKE 'e%';
 
 
 - Calcola il totale degli ordini accepted
-SELECT COUNT(`id`) AS`pagamentoAccettato`
+SELECT SUM(`price`) AS`pagamentoAccettato`
 FROM `pagamenti`
 WHERE `status` = 'accepted';
 

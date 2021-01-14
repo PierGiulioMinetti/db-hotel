@@ -1,0 +1,49 @@
+ESERCIZIO DB-HOTEL QUERIES PARTE 2: JOIN
+
+- Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+SELECT COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS'total_booking', `ospiti`.`name`, `ospiti`.`lastname`
+FROM `prenotazioni_has_ospiti`
+INNER JOIN `ospiti`
+ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`
+GROUP BY `prenotazioni_has_ospiti`.`ospite_id`;
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+- Stampare tutti gli ospiti per ogni prenotazione
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+- Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+- Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+- Prendi i dati di fatturazione (name, lastname e address) per la prenotazione con id=7
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+- Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+
+
+
+
+---------------------------------------------------------------------------------------------------------

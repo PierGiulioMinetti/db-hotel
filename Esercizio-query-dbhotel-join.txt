@@ -5,8 +5,17 @@ SELECT COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS'total_booking', `ospiti`.
 FROM `prenotazioni_has_ospiti`
 INNER JOIN `ospiti`
 ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`
-GROUP BY `prenotazioni_has_ospiti`.`ospite_id`;
+GROUP BY `prenotazioni_has_ospiti`.`ospite_id`
+HAVING `total_booking`  > 2;
 
+or 
+
+SELECT COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS'total_booking', `ospiti`.`name`, `ospiti`.`lastname`
+FROM `prenotazioni_has_ospiti`
+INNER JOIN `ospiti`
+ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`
+GROUP BY `prenotazioni_has_ospiti`.`ospite_id`
+HAVING COUNT(`prenotazioni_has_ospiti`.`ospite_id`)  > 2;
 
 
 
